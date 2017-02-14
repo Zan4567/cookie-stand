@@ -1,0 +1,45 @@
+body {
+  background-color: #FFCCBB;
+}
+
+main {
+
+}
+
+h1 {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 34pt;
+  margin: 10pt;
+}
+
+h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 26pt;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: "Cinzel Decorative", "Lucida Sans Unicode", sans-serif;
+  font-size: 18pt;
+}
+
+.content_block {
+  font-family: 'Palatino Linotype', serif;
+  background-color: #FFA07A;
+  display: inline-block;
+  padding: 5pt 30pt;
+  margin: 20px 10%;
+  border-style: double;
+}
+
+.data {
+  font-family: verdana, sans-serif;
+}
+
+header {
+  padding: 2pt 30pt;
+  border-style: solid;
+  border-width: thin;
+  border-color: Gray;
+  background-color: #FA8072;
+}
