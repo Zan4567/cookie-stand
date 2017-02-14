@@ -23,6 +23,18 @@ h3 {
   font-size: 18pt;
 }
 
+table {
+  width: 100%;
+}
+
+th, td {
+  table-layout: fixed;
+  padding: 4px;
+  border-style: solid;
+  border-width: thin;
+  border-collapse: collapse;
+}
+
 .content_block {
   font-family: 'Palatino Linotype', serif;
   background-color: #FFA07A;

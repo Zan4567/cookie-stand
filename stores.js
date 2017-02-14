@@ -38,28 +38,52 @@ function CookieStore(name, min, max, avg) {
 
     return total;
   };//getTotalSales
-  //puts the info from the object into the display_area div on the page.
+  //puts the info from the object into the table on the page.
   //requires the sales data to already be generated.
   this.printInfo = function() {
-    var infobox = document.getElementById('display_area');
+    var table = document.getElementById('stores_table');
+    var row = document.createElement('tr');
+    var salesC;
 
-    var nameEl = document.createElement('h3');
-    nameEl.textContent = this.name;
-    infobox.appendChild(nameEl);
+    table.appendChild(row);
 
-    var listEl = document.createElement('ul');
-    infobox.appendChild(listEl);
+    //create name cell
+    var nameC = document.createElement('td');
+    nameC.textContent = this.name;
+    row.appendChild(nameC);
 
-    //assuming length of sales is === length of timeNames ¯\_(ツ)_/¯
+    //hourly sale cells
     for (var i = 0; i < this.sales.length; i++) {
-      var salesEl = document.createElement('li');
-      salesEl.textContent = this.timeNames[i] + ': ' + this.sales[i] + ' cookies';
-      listEl.appendChild(salesEl);
+      salesC = document.createElement('td');
+      salesC.textContent = this.sales[i];
+      row.appendChild(salesC);
     }
 
-    var totalEl = document.createElement('li');
-    totalEl.textContent = 'Total: ' + this.getTotalSales() + ' cookies';
-    listEl.appendChild(totalEl);
+    var totalC = document.createElement('td');
+    totalC.textContent = this.getTotalSales();
+    row.appendChild(totalC);
+
+
+
+    // var infobox = document.getElementById('display_area');
+    //
+    // var nameEl = document.createElement('h3');
+    // nameEl.textContent = this.name;
+    // infobox.appendChild(nameEl);
+    //
+    // var listEl = document.createElement('ul');
+    // infobox.appendChild(listEl);
+    //
+    // //assuming length of sales is === length of timeNames ¯\_(ツ)_/¯
+    // for (var i = 0; i < this.sales.length; i++) {
+    //   var salesEl = document.createElement('li');
+    //   salesEl.textContent = this.timeNames[i] + ': ' + this.sales[i] + ' cookies';
+    //   listEl.appendChild(salesEl);
+    // }
+    //
+    // var totalEl = document.createElement('li');
+    // totalEl.textContent = 'Total: ' + this.getTotalSales() + ' cookies';
+    // listEl.appendChild(totalEl);
   };//printInfo
 };
 
