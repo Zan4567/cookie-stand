@@ -35,12 +35,17 @@ th, td {
   border-collapse: collapse;
 }
 
+thead, tfoot {
+  font-weight: bold;
+}
+
 .content_block {
   font-family: 'Palatino Linotype', serif;
   background-color: #FFA07A;
-  display: inline-block;
+  display: block;
+  width: 90%;
   padding: 5pt 30pt;
-  margin: 20px 10%;
+  margin: 20px 0;
   border-style: double;
 }
 
