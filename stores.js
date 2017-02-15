@@ -3,7 +3,6 @@ function CookieStore(name, min, max, avg) {
   this.min = min;
   this.max = max;
   this.avg = avg; //average cookies sold per customer
-  this.timeNames = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];
   this.sales = [-1, -1, -1, -1, -1, -1, -1, -1];
 
   //generates sales for an hour, based on the location's info.
@@ -15,6 +14,7 @@ function CookieStore(name, min, max, avg) {
     //console.log(cookies + ' cookies');
     return cookies;
   };
+
   //generates the number of cookies sold for the day using genRandomSales,
   //and puts them in the sales array.
   this.generateSales = function() {
@@ -38,52 +38,43 @@ function CookieStore(name, min, max, avg) {
 
     return total;
   };//getTotalSales
+
   //puts the info from the object into the table on the page.
   //requires the sales data to already be generated.
   this.printInfo = function() {
     var table = document.getElementById('stores_table');
     var row = document.createElement('tr');
-    var salesC;
-
+    var salesC, sSalesC;
     table.appendChild(row);
+
 
     //create name cell
     var nameC = document.createElement('td');
     nameC.textContent = this.name;
     row.appendChild(nameC);
 
+    //get the second table displaying servers and add a row
+    var serverTable = document.getElementById('server_table')
+    var serverRow = document.createElement('tr');
+    var sNameC = document.createElement('td');
+    sNameC.textContent = this.name;
+    serverTable.appendChild(serverRow);
+    serverRow.appendChild(sNameC);
+
     //hourly sale cells
     for (var i = 0; i < this.sales.length; i++) {
       salesC = document.createElement('td');
       salesC.textContent = this.sales[i];
       row.appendChild(salesC);
+
+      sSalesC = document.createElement('td');
+      sSalesC.textContent = Math.max(Math.ceil((this.sales[i] / this.avg) / 20), 2);
+      serverRow.appendChild(sSalesC);
     }
 
     var totalC = document.createElement('td');
     totalC.textContent = this.getTotalSales();
     row.appendChild(totalC);
-
-
-
-    // var infobox = document.getElementById('display_area');
-    //
-    // var nameEl = document.createElement('h3');
-    // nameEl.textContent = this.name;
-    // infobox.appendChild(nameEl);
-    //
-    // var listEl = document.createElement('ul');
-    // infobox.appendChild(listEl);
-    //
-    // //assuming length of sales is === length of timeNames ¯\_(ツ)_/¯
-    // for (var i = 0; i < this.sales.length; i++) {
-    //   var salesEl = document.createElement('li');
-    //   salesEl.textContent = this.timeNames[i] + ': ' + this.sales[i] + ' cookies';
-    //   listEl.appendChild(salesEl);
-    // }
-    //
-    // var totalEl = document.createElement('li');
-    // totalEl.textContent = 'Total: ' + this.getTotalSales() + ' cookies';
-    // listEl.appendChild(totalEl);
   };//printInfo
 };
 
