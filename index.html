@@ -14,57 +14,56 @@
   </header>
 
   <div class="content_block">
-    <h2>Location info:</h2>
+    <form id="addform">
+      <fieldset>
+        <!-- create a store with:
+        name
+        min
+        max
+        avg -->
+        <div>
+        <label for="name">Store name:</label>
+        <input type="text" name="name" required>
+        <label for="min">Minimum customers/hour:</label>
+        <input type="number" name="min" min="0" required>
+        </div>
+        <div>
+        <label for="max">Maximum customers/hour:</label>
+        <input type="number" name="max" min="0" required>
+        <label for="avg">Average cookies/customer:</label>
+        <input type="number" name="avg" min="0" step=".01" required>
+        </div>
+        <input type="submit" name="submit">
+      </fieldset>
+    </form>
+
     <div class="data" id="display_area" >
-      <!-- script adds data here -->
+      <h2>Location info:</h2>
+
+      <table class="data" id="stores_table">
+        <thead>
+          <!--  -->
+        </thead>
+        <tfoot id="storefooter">
+
+        </tfoot>
+      </table>
+      <h2>Required personnel:</h2>
+      <table class="data" id="server_table">
+        <tr>
+          <th>Store</th>
+          <th>10am cookie tossers needed:</th>
+          <th>11am cookie tossers needed:</th>
+          <th>12pm cookie tossers needed:</th>
+          <th>1pm cookie tossers needed:</th>
+          <th>2pm cookie tossers needed:</th>
+          <th>3pm cookie tossers needed:</th>
+          <th>4pm cookie tossers needed:</th>
+          <th>5pm cookie tossers needed:</th>
+        </tr>
+      </table>
     </div>
 
-    <table class="data" id="stores_table">
-    <thead>
-      <!-- <tr>
-        <th>Store</th>
-        <th>10am sales:</th>
-        <th>11am sales:</th>
-        <th>12pm sales:</th>
-        <th>1pm sales:</th>
-        <th>2pm sales:</th>
-        <th>3pm sales:</th>
-        <th>4pm sales:</th>
-        <th>5pm sales:</th>
-        <th>Total:</th>
-      </tr> -->
-    </thead>
-    <tfoot>
-      <tr>
-        <!-- <td>Total:</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td> -->
-      </tr>
-    </tfoot>
-  </table>
-  <h2>Required personnel:</h2>
-  <table class="data" id="server_table">
-    <tr>
-      <th>Store</th>
-      <th>10am cookie tossers needed:</th>
-      <th>11am cookie tossers needed:</th>
-      <th>12pm cookie tossers needed:</th>
-      <th>1pm cookie tossers needed:</th>
-      <th>2pm cookie tossers needed:</th>
-      <th>3pm cookie tossers needed:</th>
-      <th>4pm cookie tossers needed:</th>
-      <th>5pm cookie tossers needed:</th>
-    </tr>
-  </table>
-  </div>
-
-  <script type="text/javascript" src="stores.js"></script>
-</body>
-</html>
+    <script type="text/javascript" src="stores.js"></script>
+  </body>
+  </html>
