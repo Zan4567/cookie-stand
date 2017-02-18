@@ -11,7 +11,7 @@ function writeHeader() {
 
   for (var i = 0; i < times.length; i++) {
     var timeC = document.createElement('th');
-    timeC.textContent = times[i] + ' sales:';
+    timeC.textContent = times[i];
     row.appendChild(timeC);
   }
 

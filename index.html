@@ -16,29 +16,32 @@
   <div class="content_block">
     <form id="addform">
       <fieldset>
-        <!-- create a store with:
-        name
-        min
-        max
-        avg -->
-        <div>
-        <label for="name">Store name:</label>
-        <input type="text" name="name" required>
-        <label for="min">Minimum customers/hour:</label>
-        <input type="number" name="min" min="0" required>
-        </div>
-        <div>
-        <label for="max">Maximum customers/hour:</label>
-        <input type="number" name="max" min="0" required>
-        <label for="avg">Average cookies/customer:</label>
-        <input type="number" name="avg" min="0" step=".01" required>
-        </div>
-        <input type="submit" name="submit">
+        <ul class="formholder">
+          <li>
+            <label class="flabel" for="name">Store name:</label>
+            <input class="ffield" type="text" name="name" required>
+          </li>
+          <li>
+            <label class="flabel" for="min">Minimum customers/hour:</label>
+            <input class="ffield" type="number" name="min" min="0" required>
+          </li>
+          <li>
+            <label class="flabel" for="max">Maximum customers/hour:</label>
+            <input class="ffield" type="number" name="max" min="0" required>
+          </li>
+          <li>
+            <label class="flabel" for="avg">Average cookies/customer:</label>
+            <input class="ffield" type="number" name="avg" min="0" step=".01" required>
+          </li>
+          <li>
+            <input type="submit" name="submit">
+          </li>
+        </ul>
       </fieldset>
     </form>
 
-    <div class="data" id="display_area" >
-      <h2>Location info:</h2>
+    <div class="data" id="display_area">
+      <h2>Sales info:</h2>
 
       <table class="data" id="stores_table">
         <thead>
@@ -52,14 +55,14 @@
       <table class="data" id="server_table">
         <tr>
           <th>Store</th>
-          <th>10am cookie tossers needed:</th>
-          <th>11am cookie tossers needed:</th>
-          <th>12pm cookie tossers needed:</th>
-          <th>1pm cookie tossers needed:</th>
-          <th>2pm cookie tossers needed:</th>
-          <th>3pm cookie tossers needed:</th>
-          <th>4pm cookie tossers needed:</th>
-          <th>5pm cookie tossers needed:</th>
+          <th>10am:</th>
+          <th>11am:</th>
+          <th>12pm:</th>
+          <th>1pm:</th>
+          <th>2pm:</th>
+          <th>3pm:</th>
+          <th>4pm:</th>
+          <th>5pm:</th>
         </tr>
       </table>
     </div>
