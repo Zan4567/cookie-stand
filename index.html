@@ -21,14 +21,18 @@
         min
         max
         avg -->
+        <div>
         <label for="name">Store name:</label>
         <input type="text" name="name" required>
         <label for="min">Minimum customers/hour:</label>
         <input type="number" name="min" min="0" required>
+        </div>
+        <div>
         <label for="max">Maximum customers/hour:</label>
         <input type="number" name="max" min="0" required>
         <label for="avg">Average cookies/customer:</label>
         <input type="number" name="avg" min="0" step=".01" required>
+        </div>
         <input type="submit" name="submit">
       </fieldset>
     </form>
@@ -40,10 +44,8 @@
         <thead>
           <!--  -->
         </thead>
-        <tfoot>
-          <tr>
+        <tfoot id="storefooter">
 
-          </tr>
         </tfoot>
       </table>
       <h2>Required personnel:</h2>

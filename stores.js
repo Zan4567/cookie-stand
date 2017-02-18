@@ -20,7 +20,18 @@ var writeHeader = function() {
   row.appendChild(totalC);
 }
 
+/**
+ * erases the old footer, if any, and re-generates it using data
+ * from the table
+ */
 var writeFooter = function() {
+  var foot = document.getElementById('storefooter');
+  //remove old footer content
+  while (foot.firstChild) {
+    console.log('removing ' + foot.firstChild);
+    foot.removeChild(foot.firstChild);
+  }
+
   //get totals of the cells
   var totals = [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   var table = document.getElementById('stores_table');
@@ -28,14 +39,12 @@ var writeFooter = function() {
     var row = table.rows[i];
     for (var j = 1; j < row.cells.length; j++) {
       totals[j] += parseInt(row.cells[j].textContent);
-      console.log(i + ' ' + j + ' ' + row.cells[j].textContent);
+      //console.log(i + ' ' + j + ' ' + row.cells[j].textContent);
     }
   }
 
-  var foot = document.getElementsByTagName('tfoot');
-
   var row = document.createElement('tr');
-  foot[0].appendChild(row);
+  foot.appendChild(row);
 
   var storeC = document.createElement('td');
   storeC.textContent = 'Totals:';
@@ -48,6 +57,13 @@ var writeFooter = function() {
   }
 }
 
+/**
+ * Constructor fn for CookieStore object
+ * @param string    name The name of the store
+ * @param number    min  The minimum number of customers/hour
+ * @param number    max  The maximum customers/hour
+ * @param number    avg  Average number of cookies sold per customer
+ */
 function CookieStore(name, min, max, avg) {
   this.name = name;
   this.min = min;
@@ -145,4 +161,6 @@ bellSquare.generateSales();
 bellSquare.printInfo();
 alki.generateSales();
 alki.printInfo();
+writeFooter();
+writeFooter();
 writeFooter();
