@@ -57,13 +57,32 @@ function writeFooter() {
   }
 }
 
+function formVerify() {
+  var form = document.getElementById('addform');
+  var min = form.elements['min'];
+  var max = form.elements['max'];
+
+  console.log('min ' + min.value + ' max ' + max.value);
+  if(min.value > max.value) {
+    max.setCustomValidity('Max customers cannot be less than min customers!');
+  }
+  else {
+    max.setCustomValidity('');
+  }
+}
+
 function formHandler(event) {
   event.preventDefault(); //prevents form from reloading page
 
   var storeName = event.target.name.value;
-  var storeMin = event.target.min.value;
-  var storeMax = event.target.max.value;
-  var storeAvg = event.target.avg.value;
+  var storeMin = Number(event.target.min.value);
+  var storeMax = Number(event.target.max.value);
+  var storeAvg = Number(event.target.avg.value);
+
+  console.log(storeName + ' ' + storeMin + ' ' + storeMax + ' ' + storeAvg);
+  // if(storeMin > storeMax) {
+  //   return;
+  // }
 
   var store = new CookieStore(storeName, storeMin, storeMax, storeAvg);
   store.generateSales();
@@ -92,7 +111,11 @@ function CookieStore(name, min, max, avg) {
 };
 
 CookieStore.prototype.getRandomCustomers = function() {
-  var cust = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+  var raw = (Math.random() * (this.max - this.min + 1)) + this.min;
+  // console.log('min ' + this.min);
+  // console.log('max ' + this.max);
+  // console.log('raw ' + raw);
+  var cust = Math.floor(raw);
   return cust;
 }
 
@@ -100,9 +123,9 @@ CookieStore.prototype.getRandomCustomers = function() {
 //returns the number of cookies sold.
 CookieStore.prototype.genRandomSales = function() {
   var cust = this.getRandomCustomers();
-  //console.log(cust + ' customers');
+  console.log(cust + ' customers');
   var cookies = Math.round(cust * this.avg);
-  //console.log(cookies + ' cookies');
+  console.log(cookies + ' cookies');
   return cookies;
 };
 
@@ -170,6 +193,7 @@ CookieStore.prototype.printInfo = function() {
 
 var form = document.getElementById('addform');
 form.addEventListener('submit', formHandler);
+form.onchange = formVerify;
 
 var pikePlace = new CookieStore('Pike Place Market', 17, 88, 5.2);
 var seaTac = new CookieStore('SeaTac', 6, 24, 1.2);
