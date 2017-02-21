@@ -1,12 +1,13 @@
 body {
   background-color: #FFCCBB;
-  margin-top: 100px;
+  margin-top: 110px;
 }
 
 header {
-  padding: 2pt 30pt;
+  display: flex;
+  padding: 2pt;
   width: 100%;
-  height: 90px;
+  height: 100px;
   white-space: nowrap;
   overflow: hidden;
   border-style: solid;
@@ -18,9 +19,18 @@ header {
   left: 0;
 }
 
+header > h1 {
+  flex: initial;
+}
+
+.header_image {
+  display: inline;
+  height: 90px;
+}
+
 h1 {
   font-family: "Cinzel Decorative", cursive;
-  font-size: 34pt;
+  font-size: 38pt;
   margin: 10pt;
 }
 
@@ -50,16 +60,22 @@ thead, tfoot {
 .formholder {
   padding: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   list-style-type: none;
 }
 
-.flabel {
-  flex: initial;
+.formcolumn {
+  display: flex;
+  flex-direction: column;
 }
 
-.ffield {
-  flex: 1;
+.formitem {
+  margin: 10pt;
+}
+
+.content_image {
+  margin: 10pt;
+  display: inline;
 }
 
 .content_block {
@@ -74,4 +90,11 @@ thead, tfoot {
 
 .data {
   font-family: verdana, sans-serif;
+}
+
+.store {
+  border-style: solid;
+  border-width: thin;
+  padding-left: 10pt;
+  padding-bottom: 20pt;
 }

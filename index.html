@@ -10,63 +10,58 @@
 </head>
 <body>
   <header>
-    <h1>Pat's Salmon Cookies</h1>
+    <h1>Pat's</h1>
+    <img src="assets/salmon.png" class="header_image">
+    <h1>Salmon Cookies</h1>
   </header>
 
-  <div class="content_block">
-    <form id="addform">
-      <fieldset>
-        <ul class="formholder">
-          <li>
-            <label class="flabel" for="name">Store name:</label>
-            <input class="ffield" type="text" name="name" required>
-          </li>
-          <li>
-            <label class="flabel" for="min">Minimum customers/hour:</label>
-            <input class="ffield" type="number" name="min" min="0" required>
-          </li>
-          <li>
-            <label class="flabel" for="max">Maximum customers/hour:</label>
-            <input class="ffield" type="number" name="max" min="0" required>
-          </li>
-          <li>
-            <label class="flabel" for="avg">Average cookies/customer:</label>
-            <input class="ffield" type="number" name="avg" min="0" step=".01" required>
-          </li>
-          <li>
-            <input type="submit" name="submit">
-          </li>
-        </ul>
-      </fieldset>
-    </form>
+  <main class="content_block">
+    <h2>Welcome to Pat's Salmon Cookies!</h2>
+    <img src="assets/family.jpg">
 
-    <div class="data" id="display_area">
-      <h2>Sales info:</h2>
-
-      <table class="data" id="stores_table">
-        <thead>
-          <!--  -->
-        </thead>
-        <tfoot id="storefooter">
-
-        </tfoot>
-      </table>
-      <h2>Required personnel:</h2>
-      <table class="data" id="server_table">
-        <tr>
-          <th>Store</th>
-          <th>10am:</th>
-          <th>11am:</th>
-          <th>12pm:</th>
-          <th>1pm:</th>
-          <th>2pm:</th>
-          <th>3pm:</th>
-          <th>4pm:</th>
-          <th>5pm:</th>
-        </tr>
-      </table>
+    <p>We are an innovative bakery in the Pacific Northwest specializing in our ground-breaking new cookie recipe!</p>
+    <div class="content_block">
+      <h3>Salmon cookies</h3>
+      <img src="assets/fishies.jpg" class="content_image">
+      <p>Combining filling and healthy fresh-caught salmon with the finest chocolate cookies, Pat's signature salmon cookies are poised to take the Seattle area by storm! Perfect as an accompaniment to a cup of coffee, or as an evening treat, salmon cookies are a great choice for any occasion.</p>
     </div>
 
-    <script type="text/javascript" src="stores.js"></script>
-  </body>
-  </html>
+    <h2>Our locations:</h2>
+
+    <div class="store">
+      <h3>Store name</h3>
+      <p>1234 address st. City, ST, 98765</p>
+      <p>Open 9:00 - 7:00</p>
+      <p>(555) 555-1234</p>
+      <a href="mailto:contact@patscookies.com.fake">contact@patscookies.com</a>
+    </div>
+
+    <div class="store">
+      <h3>Store name</h3>
+      <p>1234 address st. City, ST, 98765</p>
+      <p>Open 9:00 - 7:00</p>
+      <p>(555) 555-1234</p>
+      <a href="mailto:contact@patscookies.com.fake">contact@patscookies.com</a>
+    </div>
+
+    <div class="store">
+      <h3>Store name</h3>
+      <p>1234 address st. City, ST, 98765</p>
+      <p>Open 9:00 - 7:00</p>
+      <p>(555) 555-1234</p>
+      <a href="mailto:contact@patscookies.com.fake">contact@patscookies.com</a>
+    </div>
+
+    <div class="store">
+      <h3>Store name</h3>
+      <p>1234 address st. City, ST, 98765</p>
+      <p>Open 9:00 - 7:00</p>
+      <p>(555) 555-1234</p>
+      <a href="mailto:contact@patscookies.com.fake">contact@patscookies.com</a>
+    </div>
+
+    <img src="assets/shirt.jpg" class="content_image">
+
+  </main>
+</body>
+</html>
