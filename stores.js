@@ -1,3 +1,5 @@
+'use strict'
+
 function writeHeader() {
   var times = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];
   var head = document.getElementsByTagName('thead');
